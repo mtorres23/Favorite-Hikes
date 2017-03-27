@@ -1,0 +1,12 @@
+<h1>Some of My favorite Hikes</h1>
+
+<ol>
+    {{#each hikes}}
+    <li>
+        <h1><a href="/hikes/{{this.id}}">{{this.fullName}}</a></h1>
+        <h3>{{this.town}}, {{this.state}}</h3>
+        <p>{{this.description}}, {{this.length}}</p>
+        <p> {{this.rate}}
+    </li>
+    {{/each}}
+</ol>

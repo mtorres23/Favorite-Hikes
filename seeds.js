@@ -10,12 +10,13 @@ Hike.remove({}, function(err) {
 });
 
 var bMountain= new Hike({
-    first_name: 'Bell Mountain',
+    first_name: 'Bell',
     last_name: 'Mountain',
     town: 'Haiawassee',
     state: 'Georgia',
     rate: '6',
-    description: 'The trail it self is very straight forward, but steep. Best thing is the view!',   length: '4 miles'
+    description: 'The trail it self is very straight forward, but steep. Best thing is the view!'  
+    length: '4 miles'
   
 });
 
@@ -25,7 +26,8 @@ var zPark = new Hike({
     town: 'Springdale',
     state: 'Utah',
     rate: '5',
-    description: 'Angels Landing-Rugged terrain with a great view with breath taking views all around.',  length: '5 miles'
+    description: 'Angels Landing-Rugged terrain with a great view with breath taking views all around.'  
+    length: '5 miles'
 
 });
 
@@ -35,7 +37,8 @@ var gCanyon = new Hike({
     town: 'Tuba',
     state: 'Arizona', 	
     rate: '10',
-    description: 'Hermite Trail-Extremely rugged and harsh, but the view is remarkable.',   length: '7 miles'
+    description: 'Hermite Trail-Extremely rugged and harsh, but the view is remarkable.',   
+    length: '7 miles'
 
 });
 

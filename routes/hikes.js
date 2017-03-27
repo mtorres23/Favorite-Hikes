@@ -18,4 +18,18 @@ router.get('/', function(req, res) {
         });
 });
 
+// show hikes
+router.get('/:id', function(req, res) {
+    Hike.findById(req.params.id)
+        .exec(function(err, hike) {
+            if(err) console.log(err);
+
+            console.log(hike);
+            // res.send hike
+            res.render('hikes/show', {
+                hike: hike
+            });
+        });
+});
+
 module.exports = router;
