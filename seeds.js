@@ -1,56 +1,59 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
-var User = require("./models/hike");
+var Hike = require("./models/hike");
 
-mongoose.Promise = global.Promise;
+mongoose.Promise = require('bluebird');
 
-User.remove({}, function(err) {
+Hike.remove({}, function(err) {
     console.log(err);
 });
 
-var bDover= new User({
-    first_name: 'Ben',
-    last_name: 'Dover',
-    town: 'Austin',
-    state: 'Texas',
-    email: 'bdover@gmail.com',
+var bMountain= new Hike({
+    first_name: 'Bell Mountain',
+    last_name: 'Mountain',
+    town: 'Haiawassee',
+    state: 'Georgia',
+    rate: '6',
+    description: 'The trail it self is very straight forward, but steep. Best thing is the view!',   length: '4 miles'
   
 });
 
-var jJacob = new User({
-    first_name: 'John',
-    last_name: 'Jacob',
-    town: 'Williamsburg',
-    state: 'Maine',
-    email: 'jjacob34@aol.com',
+var zPark = new Hike({
+    first_name: 'Zion',
+    last_name: 'National Park',
+    town: 'Springdale',
+    state: 'Utah',
+    rate: '5',
+    description: 'Angels Landing-Rugged terrain with a great view with breath taking views all around.',  length: '5 miles'
 
 });
 
-var wRathburger = new User({
-    first_name: 'William',
-    last_name: 'Rathberger',
-    town: 'Whoville',
-    state: 'Over the Rainbow', 	
-    email: 'wrathburger33@hotmail.com'
+var gCanyon = new Hike({
+    first_name: 'Grand',
+    last_name: 'Canyon',
+    town: 'Tuba',
+    state: 'Arizona', 	
+    rate: '10',
+    description: 'Hermite Trail-Extremely rugged and harsh, but the view is remarkable.',   length: '7 miles'
 
 });
 
 
-bDover.save(function(err) {
+bMountain.save(function(err) {
   if (err) console.log(err);
 
-  console.log('bDover created!');
+  console.log('bMountain created!');
 });
 
-jJacob.save(function(err) {
+zPark.save(function(err) {
   if (err) console.log(err);
 
-  console.log('jJacob created!');
+  console.log('zPark created!');
 });
 
-wRathburger.save(function(err) {
+gCanyon.save(function(err) {
   if (err) console.log(err);
 
-  console.log('wRathburger created!');
+  console.log('gCanyon created!');
 });

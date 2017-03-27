@@ -1,14 +1,16 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-mongoose.promise = global.Promise;
+mongoose.Promise = require('bluebird');
 
 var HikeSchema = new Schema({
     first_name: String,
     last_name: String,
     town: String,
     state: String,
-    email: String
+    rate: String,
+    description: String,
+    length: String
    
 });
 
