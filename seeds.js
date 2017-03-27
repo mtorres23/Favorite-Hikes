@@ -3,7 +3,7 @@ mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
 var User = require("./models/hike");
 
-mongoose.promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 User.remove({}, function(err) {
     console.log(err);

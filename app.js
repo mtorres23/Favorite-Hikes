@@ -10,7 +10,7 @@ var session = require('express-session');
 var methodOverride = require('method-override');
 var db = require('./db');
 
-mongoose.connect('mongodb://localhost/project-2');
+mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use(session({
-  secret: "derpderpderpcats",
+  secret: "eurobob",
   resave: false,
   saveUninitialized: false
 }));
