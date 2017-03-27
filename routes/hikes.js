@@ -18,6 +18,11 @@ router.get('/', function(req, res) {
         });
 });
 
+// new author
+router.get('/new', function(req, res) {
+    res.render('hikes/new');
+});
+
 // show hikes
 router.get('/:id', function(req, res) {
     Hike.findById(req.params.id)
