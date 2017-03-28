@@ -1,6 +1,13 @@
 <h1>{{hike.fullName}}</h1>
 <h3>{{hike.town}}, {{hike.state}}</h3>
-<p>{{hike.description}}, {{hike.length}}</p>
-<p>{{hike.rate}}</p>
+<p>{{hike.rate}}, {{hike.description}}</p>
+<p>{{hike.length}}</p>
 
 <a href="/hikes" class="btn btn-default">Main Page</a>
+
+<div>
+    <a href="/hikes/{{hike.id}}/edit" class="btn btn-primary">Edit {{hike.fullName}}</a>
+</div>
+<form action="/hikes/{{hike.id}}?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE" class="btn btn-danger" />
+</form>

@@ -5,10 +5,10 @@
     <li>
         <h1><a href="/hikes/{{this.id}}">{{this.fullName}}</a></h1>
         <h3>{{this.town}}, {{this.state}}</h3>
-        <p>{{this.description}}, {{this.length}}</p>
-        <p> {{this.rate}}
+        <p>{{this.rate}}, {{this.description}}</p>
+        <p> {{this.length}}</p>
     </li>
     {{/each}}
 </ol>
 
-<a href="/hikes/new" class="btn btn-default">Creating a New Hike</a>
+<a href="/hikes/new" class="btn btn-default">Create a New Hike</a>
