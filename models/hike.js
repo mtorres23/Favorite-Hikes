@@ -3,15 +3,6 @@ var Schema = mongoose.Schema;
 
 mongoose.Promise = require('bluebird');
 
-var UserSchema = new Schema({
-  username: String,
-  email: String,
-  password_digest: String,
-  list: [ListSchema],
-  created_at: Date,
-  updated_at: Date
-});
-
 var HikeSchema = new Schema({
     first_name: String,
     last_name: String,
@@ -34,6 +25,15 @@ HikeSchema.pre('save', function(next){
 
 HikeSchema.virtual('fullName').get(function () {
     return this.first_name + ' ' + this.last_name;
+});
+
+var UserSchema = new Schema({
+  username: String,
+  email: String,
+  password_digest: String,
+  list: [ListSchema],
+  created_at: Date,
+  updated_at: Date
 });
 
 
