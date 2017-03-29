@@ -15,6 +15,9 @@ As a user I would like to:
 -Post my own trails
 -Edit, delete, my post.
 
+Trello Board:
+https://trello.com/b/r2UQxhHn/take-a-hike
+
 
 Strecth Goals
 -Add users with authentication
