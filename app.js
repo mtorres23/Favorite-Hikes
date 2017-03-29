@@ -10,8 +10,12 @@ var session = require('express-session');
 var methodOverride = require('method-override');
 var db = require('./db');
 
+if(process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);  
+} else {
+  mongoose.connect('mongodb://localhost/Favorite-Hikes');
+}
 
-mongoose.connect('mongodb://heroku_hl8cpnrr:31tihcdvchba3152ki5sqepeig@ds141490.mlab.com:41490/heroku_hl8cpnrr');
 
 
 
