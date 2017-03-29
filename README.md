@@ -18,6 +18,9 @@ As a user I would like to:
 Trello Board:
 https://trello.com/b/r2UQxhHn/take-a-hike
 
+Wire Frame:
+https://www.draw.io/#Hmtorres23%2FFavorite-Hikes%2Fmaster%2FUntitled%20Diagram.xml
+
 
 Strecth Goals
 -Add users with authentication
