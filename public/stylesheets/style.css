@@ -2,14 +2,34 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
+  background-image: url('http://i.imgur.com/KelVGGE.jpg');
+  background-size: cover;
+  min-height:100%;
+}
+
+#navigationBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
 }
 
 a {
-    color: #000;
+  color: rgb(255, 255, 255);
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+}
+
+p {
+  color: rgb(255, 255, 255);
 }
 
 a:hover {
-    color: #209aca;
+    color: rgb(74, 186, 2139);
 }
 
 ol {
@@ -28,8 +48,53 @@ ol li {
 
 .btn.btn-primary, .btn.btn-danger {
     margin-top: 20px;
+    color: rgb(161, 161, 161);
 }
 
 .btn.btn-default {
     margin-top: 50px;
+    color: rgb(161, 161, 161);
+    background-color: rgb(133, 217, 144);
+}
+
+.row {
+  color: rgb(255, 255, 255);
+}
+
+.form-control {
+  background: rgb(209, 209, 209);
+}
+.bell {
+    height: auto; 
+    width: auto; 
+    max-width: 100px; 
+    max-height: 300px;
+    border: 1px solid;
+    border-radius: 12px
+    padding: 5px;
+}
+
+.zion {
+    height: auto; 
+    width: auto; 
+    max-width: 100px; 
+    max-height: 300px;
+    border: 1px solid;
+    border-radius: 12px
+    padding: 5px;
+    margin: auto;
+}
+
+.gcanyon {
+    height: auto; 
+    width: auto; 
+    max-width: 100px; 
+    max-height: 300px;
+    border: 1px solid;
+    border-radius: 12px
+    padding: 5px;
+}
+
+.pics {
+  
 }

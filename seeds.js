@@ -2,13 +2,19 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
 var Hike = require("./models/hike");
+//var User = require("./models/hike");
 
 mongoose.Promise = require('bluebird');
+
+//User.remove({}, function(err) {
+  //console.log(err);
+//});
 
 Hike.remove({}, function(err) {
     console.log(err);
 });
 
+//seeds hikes
 var bMountain= new Hike({
     first_name: 'Bell',
     last_name: 'Mountain',

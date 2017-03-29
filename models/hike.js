@@ -27,24 +27,7 @@ HikeSchema.virtual('fullName').get(function () {
     return this.first_name + ' ' + this.last_name;
 });
 
-var UserSchema = new Schema({
-  username: String,
-  email: String,
-  password_digest: String,
-  list: [ListSchema],
-  created_at: Date,
-  updated_at: Date
-});
 
-
-UserSchema.pre('save', function(next) {
-    now = new Data();
-    this.updated_at = now;
-    if ( !this.created_at ) {
-        this.created_at = now;
-    }
-    next();
-});
-
+//var HikeModel = mongoose.model('Hike', HikeSchema);
 
 module.exports = mongoose.model("Hike", HikeSchema);
