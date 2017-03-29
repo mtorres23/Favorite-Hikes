@@ -11,7 +11,7 @@ var methodOverride = require('method-override');
 var db = require('./db');
 
 
-mongoose.connect('mongodb://localhost/Favorite-Hikes');
+mongoose.connect('mongodb://heroku_hl8cpnrr:31tihcdvchba3152ki5sqepeig@ds141490.mlab.com:41490/heroku_hl8cpnrr');
 
 
 
