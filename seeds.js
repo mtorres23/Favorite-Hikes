@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Favorite-Hikes');
-
+// mongoose.connect('mongodb://localhost/Favorite-Hikes');
+if(process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);  
+} else {
+  mongoose.connect('mongodb://localhost/Favorite-Hikes');
+}
 var Hike = require("./models/hike");
 //var User = require("./models/hike");
 
