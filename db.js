@@ -2,7 +2,13 @@ var mongoose = require('mongoose');
 
 var db = mongoose.connection;
 
-mongoose.promise = global.Promise;
+if(process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);  
+} else {
+  mongoose.connect('mongodb://localhost/Favorite-Hikes');
+}
+
+// mongoose.promise = global.Promise;
 
 // CONNECTION EVENTS
 db.once('open', function() {
