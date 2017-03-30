@@ -18,7 +18,7 @@ As a user I would like to:
 Trello Board:
 https://trello.com/b/r2UQxhHn/take-a-hike
 
-Portfolia:
+Portfolio:
 http://michael-torres.bitballoon.com/
 
 Wire Frame:
@@ -33,7 +33,7 @@ Strecth Goals
 
 Tech used:
 -HTML
--CSS
+-CSS/bootstrap
 -JavaScript
 -Expresss.js
 -jquery

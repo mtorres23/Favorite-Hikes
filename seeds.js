@@ -5,6 +5,7 @@ if(process.env.MONGODB_URI) {
 } else {
   mongoose.connect('mongodb://localhost/Favorite-Hikes');
 }
+
 var Hike = require("./models/hike");
 //var User = require("./models/hike");
 
