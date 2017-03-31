@@ -53,7 +53,7 @@ router.get('/:id', function(req, res) {
             if(err) console.log(err);
 
             console.log(hike);
-            // res.send(author);
+            // res.send(hike);
             res.render('hikes/show', {
                 hike: hike
             });
