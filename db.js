@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.connection;
+//var db = mongoose.connection;
 
-// if(process.env.MONGODB_URI) {
-//   mongoose.connect(process.env.MONGODB_URI);  
-// } else {
-//   mongoose.connect('mongodb://localhost/Favorite-Hikes');
-// }
+if(process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);  
+} else {
+  mongoose.connect('mongodb://localhost/Favorite-Hikes');
+}
 
  mongoose.promise = require('bluebird');
 
