@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-mongoose.Promise = require('bluebird');
+mongoose.Promise = global.Promise;
 
 var HikeSchema = new Schema({
     first_name: String,
@@ -11,7 +11,7 @@ var HikeSchema = new Schema({
     rate: String,
     description: String,
     length: String
-   
+
 });
 
 HikeSchema.pre('save', function(next){
@@ -28,6 +28,6 @@ HikeSchema.virtual('fullName').get(function () {
 });
 
 
-//var HikeModel = mongoose.model('Hike', HikeSchema);
+var HikeModel = mongoose.model('Hike', HikeSchema);
 
 module.exports = mongoose.model("Hike", HikeSchema);

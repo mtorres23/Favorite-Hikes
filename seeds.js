@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Hike = require("./models/hike");
 //var User = require("./models/hike");
 
-mongoose.Promise = require('bluebird');
+mongoose.Promise = global.Promise;
 
 //User.remove({}, function(err) {
   //console.log(err);
@@ -22,9 +22,9 @@ var bMountain= new Hike({
     town: 'Haiawassee',
     state: 'Georgia',
     rate: '6',
-    description: 'The trail it self is very straight forward, but steep. Best thing is the view!'  
+    description: 'The trail it self is very straight forward, but steep. Best thing is the view!',
     length: '4 miles'
-  
+
 });
 
 var zPark = new Hike({
@@ -33,7 +33,7 @@ var zPark = new Hike({
     town: 'Springdale',
     state: 'Utah',
     rate: '5',
-    description: 'Angels Landing-Rugged terrain with a great view with breath taking views all around.'  
+    description: 'Angels Landing-Rugged terrain with a great view with breath taking views all around.',
     length: '5 miles'
 
 });
@@ -42,9 +42,9 @@ var gCanyon = new Hike({
     first_name: 'Grand',
     last_name: 'Canyon',
     town: 'Tuba',
-    state: 'Arizona', 	
+    state: 'Arizona',
     rate: '10',
-    description: 'Hermite Trail-Extremely rugged and harsh, but the view is remarkable.',   
+    description: 'Hermite Trail-Extremely rugged and harsh, but the view is remarkable.',
     length: '7 miles'
 
 });
