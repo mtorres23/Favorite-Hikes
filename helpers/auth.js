@@ -1,16 +1,16 @@
 // var bcrypt = require('bcrypt-nodejs');
 // var User = require('../models/user.js');
 
-// function createSecure(req, res, next) {
-//   var password = req.body.password;
+ function createSecure(req, res, next) {
+   var password = req.body.password;
 
-//   res.hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-//   next();
-// }
+   res.hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+   next();
+ }
 
-// function loginUser(req, res, next) {
-//   var email = req.body.email;
-//   var password = req.body.password;
+ function loginUser(req, res, next) {
+   var email = req.body.email;
+   var password = req.body.password;
 
 //   User.findOne({ email: email })
 //   .then(function(foundUser){

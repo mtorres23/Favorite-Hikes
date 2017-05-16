@@ -1,5 +1,14 @@
+var Schema = require('../db/schema');
+var mongoose = require('mongoose');
+
+var User = Schema.User;
+module.exports = User;
+
+
+
+
 // var mongoose = require('mongoose');
-// var Schema = mongoose.Schema;
+// / var Schema = mongoose.Schema;
 
 // mongoose.Promise = require('bluebird');
 

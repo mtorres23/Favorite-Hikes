@@ -11,13 +11,13 @@ var methodOverride = require('method-override');
 var db = require('./db');
 
 if(process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);  
+  mongoose.connect(process.env.MONGODB_URI);
 } else {
   mongoose.connect('mongodb://localhost/Favorite-Hikes');
 }
 
-
-
+var users = require('./routes/users');
+var sessions = require('./routes/sessions');
 
 var app = express();
 
@@ -33,6 +33,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
+app.use('/users', users);
+app.use('/sessions', sessions);
+
 app.use(session({
   secret: "eurobob",
   resave: false,
@@ -41,7 +44,7 @@ app.use(session({
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./routes/users');
 var hikes = require('./routes/hikes');
 
 app.use('/', index);
