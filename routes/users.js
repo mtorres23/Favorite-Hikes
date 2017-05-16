@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/hike.js');
-var authHelpers = require('../helpers/auth.js')
+var User = require('../models/user.js');
+var authHelpers = require('../helpers/auth.js');
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
 
@@ -15,18 +15,12 @@ router.get('/signup', function(req, res){
 });
 
 router.post('/', authHelpers.createSecure, function(req, res){
-    var hashPassword = res.hashedPassword;
-    res.render('users/login');
-});
-
-
-//Auth & user create stuff
-router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
     email: req.body.email,
     password_digest: res.hashedPassword,
     username: req.body.username
   });
+
 
   user.save(function(err, user){
     if (err) console.log(err);

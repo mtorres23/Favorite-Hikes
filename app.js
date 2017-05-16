@@ -30,7 +30,7 @@ var app = express();
 
 
 var db = mongoose.connection;
-mongoose.connect('mongodb://localhost/Hikes');
+mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
 
 

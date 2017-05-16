@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/Favorite-Hikes');
+mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
 
-var Hike = require("./models/hike");
-//var User = require("./models/hike");
+var Hike = require("../models/hike");
+// var User = require("../models/user");
 
 mongoose.Promise = global.Promise;
 
@@ -48,7 +48,18 @@ var gCanyon = new Hike({
     length: '7 miles'
 
 });
-
+// 
+// var test = new User({
+//   email: 'test@mail.com',
+//   username: 'test',
+//   password_digest: 'test'
+// });
+//
+// test.save(function(err) {
+//   if (err) console.log(err);
+//
+//   console.log('user created!');
+// });
 
 bMountain.save(function(err) {
   if (err) console.log(err);
