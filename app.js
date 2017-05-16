@@ -10,7 +10,7 @@ var session = require('express-session');
 var methodOverride = require('method-override');
 
 // if(process.env.MONGODB_URI) {
-//   mongoose.connect(process.env.MONGODB_URI);
+//
 // } else {
 //
 // }
@@ -30,7 +30,8 @@ var app = express();
 
 
 var db = mongoose.connection;
-mongoose.connect('mongodb://localhost/Favorite-Hikes');
+mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect('mongodb://localhost/Favorite-Hikes');
 
 
 
@@ -80,8 +81,8 @@ db.once('open', function() {
   console.log("database has been connected!");
 });
 
-app.listen(3000, function(){
-  console.log('connected');
-});
+// app.listen(3000, function(){
+//   console.log('connected');
+// });
 
 module.exports = app;
