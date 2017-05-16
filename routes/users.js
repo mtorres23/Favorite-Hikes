@@ -1,7 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/hike.js');
-var authHelpers = require('../helpers/auth.js')
+var User = require('../models/user.js');
+var authHelpers = require('../helpers/auth.js');
+
+
+/* GET users listing. */
+router.get('/', function(req, res) {
+  res.send('respond with a resource');
+});
+
 
 
 //Index Route
@@ -71,6 +78,7 @@ router.delete('/:id', function(req, res){
 
 //CREATE User registration & Auth stuff
 
+
 router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
     email: req.body.email,
@@ -87,14 +95,6 @@ router.post('/', authHelpers.createSecure, function(req, res){
     res.redirect('/sessions/login');
   });
 });
-
-
-
-
-
-
-
-
 
 
 

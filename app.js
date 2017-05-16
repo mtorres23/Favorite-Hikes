@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
-var db = require('./db');
+
 
 if(process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
@@ -16,14 +16,36 @@ if(process.env.MONGODB_URI) {
   mongoose.connect('mongodb://localhost/Favorite-Hikes');
 }
 
+
 var users = require('./routes/users');
 var sessions = require('./routes/sessions');
 
+
+var index = require('./routes/index');
+var users = require('./routes/users');
+var hikes = require('./routes/hikes');
+var sessions = require('./routes/sessions');
+
+
+
 var app = express();
+
+
+var db = mongoose.connection;
+mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect('mongodb://localhost/Favorite-Hikes');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+app.use(session({
+  secret: "eurobob",
+  resave: false,
+  saveUninitialized: false
+}));
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -33,23 +55,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
-app.use('/users', users);
-app.use('/sessions', sessions);
-
-app.use(session({
-  secret: "eurobob",
-  resave: false,
-  saveUninitialized: false
-}));
-
-
-var index = require('./routes/index');
-var user = require('./routes/users');
-var hikes = require('./routes/hikes');
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/hikes', hikes);
+app.use('/sessions', sessions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -68,5 +78,13 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+db.once('open', function() {
+  console.log("database has been connected!");
+});
+
+// app.listen(3000, function(){
+//   console.log('connected');
+// });
 
 module.exports = app;
