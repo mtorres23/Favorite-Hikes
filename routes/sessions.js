@@ -1,17 +1,16 @@
 var express = require('express');
-var router = express.Router();
+    router = express.Router();
 var User = require('../models/user.js');
 var authHelpers = require('../helpers/auth.js');
 
-// //LOGIN
-//localhost:3000/login
-
+//LOGIN
 router.get('/login', function(req, res) {
   res.render('users/login.hbs');
 });
 
+
 router.post('/login', authHelpers.loginUser, function(req, res){
-  res.redirect('/hikes');
+  res.redirect(`/users/${req.session.currentUser._id}`);
 });
 
 router.delete('/logout', function(req, res){
